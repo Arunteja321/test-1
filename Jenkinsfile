@@ -6,10 +6,11 @@ pipeline {
                 wrap([$class: 'BuildUser']) {
                     echo env.BUILD_USER_ID
                 }
+                credentials('authorizedUser') {
+                    echo "Hi"
+                }
             }
-            credentials('authorizedUser') {
-                echo "Hi"
-            }
+           
         }
     }
 }
