@@ -6,6 +6,7 @@ pipeline {
                 wrap([$class: 'BuildUser']) {
                     echo env.BUILD_USER_ID
                 }
+                mySecret = credentials('${authorizedUser}')
             }
         }
     }
