@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('Example') {
             environment { 
-                SECRET = credentials('s3-upload-authorizedUser') 
+                SECRET = credentials('authorizedUser') 
             }
             steps {
                 wrap([$class: 'BuildUser']) {
                     echo env.BUILD_USER_ID
                 }
-                echo "secret is %SECRET%"
+                echo %SECRET%
             }
         }
     }
