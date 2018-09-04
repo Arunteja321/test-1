@@ -4,7 +4,7 @@ pipeline {
         stage('Example') {
             steps {
                 wrap([$class: 'BuildUser']) {
-                    echo "env.BUILD_USER_ID"
+                    echo env.BUILD_USER_ID
                 }
             }
         }
