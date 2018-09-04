@@ -9,7 +9,6 @@ pipeline {
                 withCredentials([secretText(credentialsId: 'authorizedUser', secretVariable: 'SECRET')]) {
                        echo "secret is $SECRET"
                 }
-                echo credentials('%authorizedUser%')
             }
         }
     }
