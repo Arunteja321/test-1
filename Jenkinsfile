@@ -4,7 +4,7 @@ pipeline {
         stage('Example') {
             steps {
                 echo 'Hello World'
-                echo env.BUILD_USER_ID
+                echo &BUILD_USER_ID
             }
         }
     }
