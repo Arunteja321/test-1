@@ -2,13 +2,14 @@ pipeline {
     agent any
     stages {
         stage('Example') {
+            environment { 
+                SECRET = credentials('s3-upload-authorizedUser') 
+            }
             steps {
                 wrap([$class: 'BuildUser']) {
                     echo env.BUILD_USER_ID
                 }
-                withCredentials([secretText(credentialsId: 'authorizedUser', secretVariable: 'SECRET')]) {
-                       echo "secret is %SECRET%"
-                }
+                echo "secret is %SECRET%"
             }
         }
     }
