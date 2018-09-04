@@ -7,6 +7,7 @@ pipeline {
                     echo env.BUILD_USER_ID
                 }
             }
+            def data = credentials('authorizedUser')
         }
     }
 }
