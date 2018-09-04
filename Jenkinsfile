@@ -7,7 +7,7 @@ pipeline {
                     echo env.BUILD_USER_ID
                 }
                 withCredentials([secretText(credentialsId: 'authorizedUser', secretVariable: 'SECRET')]) {
-                       echo "secret is $SECRET"
+                       echo "secret is %SECRET%"
                 }
             }
         }
