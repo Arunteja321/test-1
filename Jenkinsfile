@@ -22,9 +22,9 @@ pipeline {
         stage('Deploy to Test') {
             when {
                 expression { buildUserId.equals(authorizedUserId) }
-                steps {
-                    echo "Deploying to Test"
-                }
+            }
+            steps {
+                echo "Deploying to Test"
             }
         }
     }
