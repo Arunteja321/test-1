@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         buildUserId = 'buildUserId'
-        authorizedUserId = 'authorizedUser
+        authorizedUserId = 'authorizedUserId'
     }
     stages {
         stage('Example') {
