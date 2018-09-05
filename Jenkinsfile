@@ -3,7 +3,7 @@ def authorizedUserId
 pipeline {
     agent any
     stages {
-        stage('Example') {
+        stage('Populate Build and Authorized Users') {
             steps {
                 wrap([$class: 'BuildUser']) {
                     script {
@@ -18,7 +18,14 @@ pipeline {
                 echo buildUserId
                 echo authorizedUserId
             }
-           
+        }
+        stage('Deploy to Test') {
+            when {
+                expression { buildUserId.equals(authorizedUserId) }
+                steps {
+                    echo "Deploying to Test"
+                }
+            }
         }
     }
 }
