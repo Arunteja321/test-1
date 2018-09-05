@@ -2,6 +2,9 @@ pipeline {
     agent any
     stages {
         stage('Example') {
+            when {
+                expression { 2>3 }
+            }
             steps {
                 wrap([$class: 'BuildUser']) {
                     echo env.BUILD_USER_ID
@@ -14,10 +17,6 @@ pipeline {
                     script {
                         def authorizedUserId = user
                     }
-                }
-                script {
-                    echo buildUserId
-                    echo authorizedUserId
                 }
             }
            
