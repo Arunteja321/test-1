@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        authorizedUser = credentials('${authorizedUser')
+        authorizedUser = credentials('authorizedUser')
     }
     stages {
         stage('Example') {
