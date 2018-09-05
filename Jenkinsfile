@@ -9,7 +9,7 @@ pipeline {
                     echo env.BUILD_USER_ID
                 }
                 withCredentials([string(credentialsId: 'authorizedUser', variable: 'user')]) {
-                    echo "My password is '%PW1%'!"
+                    echo user
                 }
             }
            
